@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "about": "Über Uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "PRIVATE HACKER",
+    "subtitle": "Professionelle Cybersicherheitsdienste",
+    "description": "Erfahrene ethische Hacker bieten vertrauliche Lösungen für komplexe digitale Herausforderungen. Weltweit 24/7 verfügbar.",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr Erfahren"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Umfassende Lösungen",
+    "gradeChange": {
+      "title": "Notenänderung",
+      "description": "Professionelle Änderung akademischer Aufzeichnungen mit vollständiger Diskretion"
+    },
+    "phoneAccess": {
+      "title": "Telefonzugriff",
+      "description": "Fernzugriff und Überwachungslösungen für Geräte"
+    },
+    "socialMedia": {
+      "title": "Soziale Medien",
+      "description": "Kontowiederherstellung und Social-Media-Sicherheitsdienste"
+    },
+    "bitcoinRecovery": {
+      "title": "Bitcoin-Wiederherstellung",
+      "description": "Wiederherstellung von Kryptowährungs-Wallets und Blockchain-Analyse"
+    },
+    "websitePenetration": {
+      "title": "Website-Penetration",
+      "description": "Sicherheitstests und Schwachstellenanalyse"
+    },
+    "malwareDevelopment": {
+      "title": "Malware-Entwicklung",
+      "description": "Maßgeschneiderte Sicherheitstools und Exploit-Entwicklung"
+    }
+  },
+  "features": {
+    "title": "Warum Uns Wählen",
+    "confidential": {
+      "title": "100% Vertraulich",
+      "description": "Ihre Privatsphäre hat für uns höchste Priorität"
+    },
+    "expert": {
+      "title": "Expertenteam",
+      "description": "Erfahrene Profis mit nachgewiesener Erfolgsbilanz"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Jederzeit und überall verfügbar"
+    },
+    "guaranteed": {
+      "title": "Ergebnisse Garantiert",
+      "description": "Wir liefern oder Sie zahlen nicht"
+    }
+  },
+  "stats": {
+    "clients": "Zufriedene Kunden",
+    "success": "Erfolgsquote",
+    "response": "Antwortzeit (Min)"
+  },
+  "contact": {
+    "title": "Loslegen",
+    "subtitle": "Einen Service Anfordern",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefonnummer",
+    "service": "Service Auswählen",
+    "priority": "Prioritätsstufe",
+    "description": "Projektbeschreibung",
+    "features": "Erforderliche Funktionen",
+    "submit": "Anfrage Absenden",
+    "standard": "Standard",
+    "urgent": "Dringend",
+    "emergency": "Notfall"
+  },
+  "footer": {
+    "tagline": "Vertraulichkeit Garantiert | Experten-Support",
+    "copyright": "Alle Rechte Vorbehalten",
+    "disclaimer": "Nur für ethische und legale Zwecke"
+  },
+  "ticketTracker": {
+    "title": "Ticket Verfolgen",
+    "placeholder": "Ticket-ID Eingeben",
+    "check": "Status Prüfen",
+    "ticketId": "Ticket-ID",
+    "status": "Status",
+    "service": "Service",
+    "priority": "Priorität",
+    "update": "Neueste Aktualisierung",
+    "progress": "Fortschritt"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "about": "Chi Siamo",
+    "contact": "Contatto"
+  },
+  "hero": {
+    "title": "HACKER PRIVATI",
+    "subtitle": "Servizi Professionali di Cybersecurity",
+    "description": "Hacker etici esperti che forniscono soluzioni riservate per sfide digitali complesse. Disponibili 24/7 in tutto il mondo.",
+    "getStarted": "Inizia",
+    "learnMore": "Scopri di Più"
+  },
+  "services": {
+    "title": "I Nostri Servizi",
+    "subtitle": "Soluzioni Complete",
+    "gradeChange": {
+      "title": "Cambio Voti",
+      "description": "Modifica professionale dei registri accademici con completa discrezione"
+    },
+    "phoneAccess": {
+      "title": "Accesso al Telefono",
+      "description": "Soluzioni di accesso remoto e monitoraggio dei dispositivi"
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "description": "Recupero account e servizi di sicurezza per i social media"
+    },
+    "bitcoinRecovery": {
+      "title": "Recupero Bitcoin",
+      "description": "Recupero di portafogli di criptovalute e analisi blockchain"
+    },
+    "websitePenetration": {
+      "title": "Penetrazione Siti Web",
+      "description": "Test di sicurezza e valutazione delle vulnerabilità"
+    },
+    "malwareDevelopment": {
+      "title": "Sviluppo Malware",
+      "description": "Strumenti di sicurezza personalizzati e sviluppo exploit"
+    }
+  },
+  "features": {
+    "title": "Perché Sceglierci",
+    "confidential": {
+      "title": "100% Riservato",
+      "description": "La tua privacy è la nostra massima priorità"
+    },
+    "expert": {
+      "title": "Team di Esperti",
+      "description": "Professionisti esperti con comprovata esperienza"
+    },
+    "support": {
+      "title": "Supporto 24/7",
+      "description": "Disponibile sempre, ovunque"
+    },
+    "guaranteed": {
+      "title": "Risultati Garantiti",
+      "description": "Consegniamo o non paghi"
+    }
+  },
+  "stats": {
+    "clients": "Clienti Soddisfatti",
+    "success": "Tasso di Successo",
+    "response": "Tempo di Risposta (min)"
+  },
+  "contact": {
+    "title": "Inizia",
+    "subtitle": "Richiedi un Servizio",
+    "name": "Nome Completo",
+    "email": "Indirizzo Email",
+    "phone": "Numero di Telefono",
+    "service": "Seleziona Servizio",
+    "priority": "Livello di Priorità",
+    "description": "Descrizione del Progetto",
+    "features": "Funzionalità Richieste",
+    "submit": "Invia Richiesta",
+    "standard": "Standard",
+    "urgent": "Urgente",
+    "emergency": "Emergenza"
+  },
+  "footer": {
+    "tagline": "Riservatezza Garantita | Supporto Esperto",
+    "copyright": "Tutti i Diritti Riservati",
+    "disclaimer": "Solo per scopi etici e legali"
+  },
+  "ticketTracker": {
+    "title": "Traccia il Tuo Ticket",
+    "placeholder": "Inserisci ID Ticket",
+    "check": "Verifica Stato",
+    "ticketId": "ID Ticket",
+    "status": "Stato",
+    "service": "Servizio",
+    "priority": "Priorità",
+    "update": "Ultimo Aggiornamento",
+    "progress": "Progresso"
+  }
+}

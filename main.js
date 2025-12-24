@@ -3,6 +3,8 @@
 
 class DarkSideHackers {
     constructor() {
+        this.currentLanguage = 'en';
+        this.translations = {};
         this.init();
     }
 
@@ -928,19 +930,44 @@ class DarkSideHackers {
         return isValid;
     }
 
-    // Language Translator Implementation
+    // Language Translator Implementation (Local Translation)
     setupLanguageTranslator() {
         // Create language selector HTML
         this.createLanguageSelector();
         
-        // Initialize Google Translate
-        this.initializeGoogleTranslate();
+        // Load translations
+        this.loadTranslations();
         
         // Load saved language preference
         this.loadSavedLanguage();
         
         // Add responsive behavior
         this.setupLanguageSelectorResponsive();
+    }
+
+    async loadTranslations() {
+        // Load English translations first (default)
+        try {
+            const response = await fetch('/translations/en.json');
+            this.translations['en'] = await response.json();
+        } catch (error) {
+            console.error('Failed to load English translations:', error);
+        }
+    }
+
+    async loadLanguageFile(langCode) {
+        if (this.translations[langCode]) {
+            return this.translations[langCode];
+        }
+
+        try {
+            const response = await fetch(`/translations/${langCode}.json`);
+            this.translations[langCode] = await response.json();
+            return this.translations[langCode];
+        } catch (error) {
+            console.error(`Failed to load ${langCode} translations:`, error);
+            return this.translations['en']; // Fallback to English
+        }
     }
 
     createLanguageSelector() {
@@ -1019,64 +1046,78 @@ class DarkSideHackers {
     }
 
     initializeGoogleTranslate() {
-        // Create Google Translate element container
-        const translateContainer = document.createElement('div');
-        translateContainer.id = 'google-translate-element';
-        translateContainer.style.display = 'none';
-        document.body.appendChild(translateContainer);
-
-        // Load Google Translate script
-        const script = document.createElement('script');
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        document.head.appendChild(script);
-
-        // Initialize Google Translate
-        window.googleTranslateElementInit = () => {
-            if (window.google && window.google.translate) {
-                new window.google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    includedLanguages: 'en,de,pt,it,es,fr',
-                    layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
-                }, 'google-translate-element');
-                
-                // Hide Google Translate's default UI after it loads
-                setTimeout(() => {
-                    const googteCombo = document.querySelector('.goog-te-combo');
-                    if (googteCombo) {
-                        googteCombo.style.display = 'none';
-                    }
-                }, 2000);
-            }
-        };
+        // Removed: Google Translate integration replaced with local translation system
     }
 
-    changeLanguage(langCode) {
-        // Wait for Google Translate to be ready
-        const waitForGoogleTranslate = () => {
-            const googteCombo = document.querySelector('.goog-te-combo');
-            if (googteCombo) {
-                // Set the language
-                googteCombo.value = langCode;
-                
-                // Trigger change event
-                const event = new Event('change', { bubbles: true });
-                googteCombo.dispatchEvent(event);
-                
-                // Update UI
-                this.updateLanguageUI(langCode);
-                
-                // Save preference
-                this.saveLanguagePreference(langCode);
-            } else {
-                // If Google Translate is not ready, wait and try again
-                setTimeout(waitForGoogleTranslate, 500);
-            }
-        };
+    async changeLanguage(langCode) {
+        // Load translation file for the selected language
+        const translations = await this.loadLanguageFile(langCode);
+        
+        if (!translations) {
+            console.error('Translations not available for', langCode);
+            return;
+        }
 
-        // Start waiting
-        waitForGoogleTranslate();
+        // Update current language
+        this.currentLanguage = langCode;
+
+        // Apply translations to the page
+        this.applyTranslations(translations);
+        
+        // Update UI
+        this.updateLanguageUI(langCode);
+        
+        // Save preference
+        this.saveLanguagePreference(langCode);
+    }
+
+    applyTranslations(translations) {
+        // Translation mapping: data attribute to translation key
+        const elements = document.querySelectorAll('[data-translate]');
+        
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const translation = this.getNestedTranslation(translations, key);
+            
+            if (translation) {
+                // Check if element is an input with placeholder
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    if (element.hasAttribute('placeholder')) {
+                        element.placeholder = translation;
+                    }
+                } else {
+                    // Regular text content
+                    element.textContent = translation;
+                }
+            }
+        });
+
+        // Also translate navigation links by text matching
+        this.translateNavigation(translations);
+    }
+
+    translateNavigation(translations) {
+        // Translate navigation links
+        const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+        navLinks.forEach(link => {
+            const text = link.textContent.trim();
+            if (text === 'Home' || text === translations.nav.home) {
+                link.textContent = translations.nav.home;
+            } else if (text === 'Services' || text.includes('Servic') || text.includes('Dienst')) {
+                link.textContent = translations.nav.services;
+            } else if (text === 'About' || text.includes('About') || text.includes('Über') || text.includes('Acerca') || text.includes('Propos') || text.includes('Chi')) {
+                link.textContent = translations.nav.about;
+            } else if (text === 'Contact' || text.includes('Contact') || text.includes('Kontakt')) {
+                link.textContent = translations.nav.contact;
+            }
+        });
+    }
+
+    getNestedTranslation(obj, path) {
+        // Support nested keys like "nav.home"
+        return path.split('.').reduce((current, key) => {
+            return current ? current[key] : undefined;
+        }, obj);
     }
 
     updateLanguageUI(langCode) {
@@ -1119,9 +1160,10 @@ class DarkSideHackers {
 
         // Apply saved language if different from default English
         if (savedLang && savedLang !== 'en') {
+            // Wait for DOM to be fully loaded
             setTimeout(() => {
                 this.changeLanguage(savedLang);
-            }, 3000); // Wait longer for Google Translate to load
+            }, 500); // Shorter delay since we don't need to wait for Google Translate
         }
     }
 

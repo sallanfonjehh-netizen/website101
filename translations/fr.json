@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "HACKERS PRIVÉS",
+    "subtitle": "Services Professionnels de Cybersécurité",
+    "description": "Hackers éthiques experts fournissant des solutions confidentielles pour des défis numériques complexes. Disponibles 24/7 dans le monde entier.",
+    "getStarted": "Commencer",
+    "learnMore": "En Savoir Plus"
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Solutions Complètes",
+    "gradeChange": {
+      "title": "Changement de Notes",
+      "description": "Modification professionnelle des dossiers académiques en toute discrétion"
+    },
+    "phoneAccess": {
+      "title": "Accès Téléphonique",
+      "description": "Solutions d'accès à distance et de surveillance des appareils"
+    },
+    "socialMedia": {
+      "title": "Réseaux Sociaux",
+      "description": "Récupération de compte et services de sécurité des réseaux sociaux"
+    },
+    "bitcoinRecovery": {
+      "title": "Récupération Bitcoin",
+      "description": "Récupération de portefeuilles de crypto-monnaies et analyse de blockchain"
+    },
+    "websitePenetration": {
+      "title": "Pénétration de Sites Web",
+      "description": "Tests de sécurité et évaluation des vulnérabilités"
+    },
+    "malwareDevelopment": {
+      "title": "Développement de Malwares",
+      "description": "Outils de sécurité personnalisés et développement d'exploits"
+    }
+  },
+  "features": {
+    "title": "Pourquoi Nous Choisir",
+    "confidential": {
+      "title": "100% Confidentiel",
+      "description": "Votre vie privée est notre priorité absolue"
+    },
+    "expert": {
+      "title": "Équipe Experte",
+      "description": "Professionnels chevronnés avec un parcours éprouvé"
+    },
+    "support": {
+      "title": "Support 24/7",
+      "description": "Disponible à tout moment, n'importe où"
+    },
+    "guaranteed": {
+      "title": "Résultats Garantis",
+      "description": "Nous livrons ou vous ne payez pas"
+    }
+  },
+  "stats": {
+    "clients": "Clients Satisfaits",
+    "success": "Taux de Réussite",
+    "response": "Temps de Réponse (min)"
+  },
+  "contact": {
+    "title": "Commencer",
+    "subtitle": "Demander un Service",
+    "name": "Nom Complet",
+    "email": "Adresse Email",
+    "phone": "Numéro de Téléphone",
+    "service": "Sélectionner un Service",
+    "priority": "Niveau de Priorité",
+    "description": "Description du Projet",
+    "features": "Fonctionnalités Requises",
+    "submit": "Soumettre la Demande",
+    "standard": "Standard",
+    "urgent": "Urgent",
+    "emergency": "Urgence"
+  },
+  "footer": {
+    "tagline": "Confidentialité Garantie | Support Expert",
+    "copyright": "Tous Droits Réservés",
+    "disclaimer": "Pour des fins éthiques et légales uniquement"
+  },
+  "ticketTracker": {
+    "title": "Suivre Votre Ticket",
+    "placeholder": "Entrer l'ID du Ticket",
+    "check": "Vérifier le Statut",
+    "ticketId": "ID du Ticket",
+    "status": "Statut",
+    "service": "Service",
+    "priority": "Priorité",
+    "update": "Dernière Mise à Jour",
+    "progress": "Progrès"
+  }
+}
