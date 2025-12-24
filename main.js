@@ -1000,8 +1000,11 @@ class DarkSideHackers {
     createLanguageSelector() {
         // Check if selector already exists
         if (document.getElementById('language-selector')) {
+            console.log('Language selector already exists');
             return;
         }
+
+        console.log('Creating language selector...');
 
         const languages = {
             'en': { name: 'English', flag: '🇺🇸' },
@@ -1036,6 +1039,9 @@ class DarkSideHackers {
         const navContainer = document.querySelector('.nav-container');
         if (navContainer) {
             navContainer.appendChild(languageSelector);
+            console.log('Language selector added to nav-container');
+        } else {
+            console.error('Nav container not found! Language selector not added.');
         }
 
         // Add event listeners
