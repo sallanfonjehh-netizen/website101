@@ -1094,6 +1094,45 @@ class DarkSideHackers {
 
         // Also translate navigation links by text matching
         this.translateNavigation(translations);
+        
+        // Auto-translate common button text
+        this.autoTranslateButtons(translations);
+        
+        // Store current translations for page-wide use
+        window.currentTranslations = translations;
+    }
+    
+    autoTranslateButtons(translations) {
+        // Translate common button texts
+        const buttons = document.querySelectorAll('button, .btn');
+        buttons.forEach(button => {
+            const text = button.textContent.trim().toUpperCase();
+            
+            // Get Started button
+            if (text === 'GET STARTED' || text === translations.hero?.getStarted?.toUpperCase()) {
+                if (translations.hero?.getStarted) {
+                    button.textContent = translations.hero.getStarted;
+                }
+            }
+            // Learn More button
+            else if (text === 'LEARN MORE' || text === translations.hero?.learnMore?.toUpperCase()) {
+                if (translations.hero?.learnMore) {
+                    button.textContent = translations.hero.learnMore;
+                }
+            }
+            // Submit button
+            else if (text === 'SUBMIT REQUEST' || text === translations.contact?.submit?.toUpperCase()) {
+                if (translations.contact?.submit) {
+                    button.textContent = translations.contact.submit;
+                }
+            }
+            // Check Status button
+            else if (text === 'CHECK STATUS' || text === translations.ticketTracker?.check?.toUpperCase()) {
+                if (translations.ticketTracker?.check) {
+                    button.textContent = translations.ticketTracker.check;
+                }
+            }
+        });
     }
 
     translateNavigation(translations) {
