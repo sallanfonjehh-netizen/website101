@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Início",
+    "services": "Serviços",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "HACKERS PRIVADOS",
+    "subtitle": "Serviços Profissionais de Cibersegurança",
+    "description": "Hackers éticos especializados fornecendo soluções confidenciais para desafios digitais complexos. Disponível 24/7 em todo o mundo.",
+    "getStarted": "Começar",
+    "learnMore": "Saiba Mais"
+  },
+  "services": {
+    "title": "Nossos Serviços",
+    "subtitle": "Soluções Abrangentes",
+    "gradeChange": {
+      "title": "Alteração de Notas",
+      "description": "Modificação profissional de registros acadêmicos com total discrição"
+    },
+    "phoneAccess": {
+      "title": "Acesso ao Telefone",
+      "description": "Soluções de acesso remoto e monitoramento de dispositivos"
+    },
+    "socialMedia": {
+      "title": "Redes Sociais",
+      "description": "Recuperação de contas e serviços de segurança em redes sociais"
+    },
+    "bitcoinRecovery": {
+      "title": "Recuperação de Bitcoin",
+      "description": "Recuperação de carteiras de criptomoedas e análise de blockchain"
+    },
+    "websitePenetration": {
+      "title": "Penetração de Sites",
+      "description": "Testes de segurança e avaliação de vulnerabilidades"
+    },
+    "malwareDevelopment": {
+      "title": "Desenvolvimento de Malware",
+      "description": "Ferramentas de segurança personalizadas e desenvolvimento de exploits"
+    }
+  },
+  "features": {
+    "title": "Por Que Nos Escolher",
+    "confidential": {
+      "title": "100% Confidencial",
+      "description": "Sua privacidade é nossa principal prioridade"
+    },
+    "expert": {
+      "title": "Equipe Especializada",
+      "description": "Profissionais experientes com histórico comprovado"
+    },
+    "support": {
+      "title": "Suporte 24/7",
+      "description": "Disponível a qualquer hora, em qualquer lugar"
+    },
+    "guaranteed": {
+      "title": "Resultados Garantidos",
+      "description": "Entregamos ou você não paga"
+    }
+  },
+  "stats": {
+    "clients": "Clientes Satisfeitos",
+    "success": "Taxa de Sucesso",
+    "response": "Tempo de Resposta (min)"
+  },
+  "contact": {
+    "title": "Começar",
+    "subtitle": "Solicitar um Serviço",
+    "name": "Nome Completo",
+    "email": "Endereço de Email",
+    "phone": "Número de Telefone",
+    "service": "Selecionar Serviço",
+    "priority": "Nível de Prioridade",
+    "description": "Descrição do Projeto",
+    "features": "Recursos Necessários",
+    "submit": "Enviar Solicitação",
+    "standard": "Padrão",
+    "urgent": "Urgente",
+    "emergency": "Emergência"
+  },
+  "footer": {
+    "tagline": "Confidencialidade Garantida | Suporte Especializado",
+    "copyright": "Todos os Direitos Reservados",
+    "disclaimer": "Apenas para fins éticos e legais"
+  },
+  "ticketTracker": {
+    "title": "Rastrear Seu Ticket",
+    "placeholder": "Digite o ID do Ticket",
+    "check": "Verificar Status",
+    "ticketId": "ID do Ticket",
+    "status": "Status",
+    "service": "Serviço",
+    "priority": "Prioridade",
+    "update": "Última Atualização",
+    "progress": "Progresso"
+  }
+}

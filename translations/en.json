@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "PRIVATE HACKERS",
+    "subtitle": "Professional Cybersecurity Services",
+    "description": "Expert ethical hackers providing confidential solutions for complex digital challenges. Available 24/7 worldwide.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive Solutions",
+    "gradeChange": {
+      "title": "Grade Change",
+      "description": "Professional academic record modification with complete discretion"
+    },
+    "phoneAccess": {
+      "title": "Phone Access",
+      "description": "Remote device access and monitoring solutions"
+    },
+    "socialMedia": {
+      "title": "Social Media",
+      "description": "Account recovery and social media security services"
+    },
+    "bitcoinRecovery": {
+      "title": "Bitcoin Recovery",
+      "description": "Cryptocurrency wallet recovery and blockchain analysis"
+    },
+    "websitePenetration": {
+      "title": "Website Penetration",
+      "description": "Security testing and vulnerability assessment"
+    },
+    "malwareDevelopment": {
+      "title": "Malware Development",
+      "description": "Custom security tools and exploit development"
+    }
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "confidential": {
+      "title": "100% Confidential",
+      "description": "Your privacy is our top priority"
+    },
+    "expert": {
+      "title": "Expert Team",
+      "description": "Seasoned professionals with proven track record"
+    },
+    "support": {
+      "title": "24/7 Support",
+      "description": "Available anytime, anywhere"
+    },
+    "guaranteed": {
+      "title": "Results Guaranteed",
+      "description": "We deliver or you don't pay"
+    }
+  },
+  "stats": {
+    "clients": "Satisfied Clients",
+    "success": "Success Rate",
+    "response": "Response Time (min)"
+  },
+  "contact": {
+    "title": "Get Started",
+    "subtitle": "Request a Service",
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "service": "Select Service",
+    "priority": "Priority Level",
+    "description": "Project Description",
+    "features": "Required Features",
+    "submit": "Submit Request",
+    "standard": "Standard",
+    "urgent": "Urgent",
+    "emergency": "Emergency"
+  },
+  "footer": {
+    "tagline": "Confidentiality Guaranteed | Expert Support",
+    "copyright": "All Rights Reserved",
+    "disclaimer": "For ethical and legal purposes only"
+  },
+  "ticketTracker": {
+    "title": "Track Your Ticket",
+    "placeholder": "Enter Ticket ID",
+    "check": "Check Status",
+    "ticketId": "Ticket ID",
+    "status": "Status",
+    "service": "Service",
+    "priority": "Priority",
+    "update": "Latest Update",
+    "progress": "Progress"
+  }
+}

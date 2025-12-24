@@ -3,6 +3,8 @@
 
 class DarkSideHackers {
     constructor() {
+        this.currentLanguage = 'en';
+        this.translations = {};
         this.init();
     }
 
@@ -928,13 +930,13 @@ class DarkSideHackers {
         return isValid;
     }
 
-    // Language Translator Implementation
+    // Language Translator Implementation (Local Translation)
     setupLanguageTranslator() {
         // Create language selector HTML
         this.createLanguageSelector();
         
-        // Initialize Google Translate
-        this.initializeGoogleTranslate();
+        // Load translations
+        this.loadTranslations();
         
         // Load saved language preference
         this.loadSavedLanguage();
@@ -943,11 +945,66 @@ class DarkSideHackers {
         this.setupLanguageSelectorResponsive();
     }
 
+    async loadTranslations() {
+        // Load English translations first (default)
+        try {
+            const response = await fetch('/translations/en.json');
+            if (!response.ok) {
+                console.error('Failed to load English translations, status:', response.status);
+                // Try relative path
+                const response2 = await fetch('translations/en.json');
+                if (response2.ok) {
+                    this.translations['en'] = await response2.json();
+                    console.log('English translations loaded from relative path');
+                } else {
+                    console.error('Failed to load English translations from both paths');
+                }
+            } else {
+                this.translations['en'] = await response.json();
+                console.log('English translations loaded successfully');
+            }
+        } catch (error) {
+            console.error('Failed to load English translations:', error);
+        }
+    }
+
+    async loadLanguageFile(langCode) {
+        if (this.translations[langCode]) {
+            console.log('Using cached translations for', langCode);
+            return this.translations[langCode];
+        }
+
+        try {
+            // Try absolute path first
+            let response = await fetch(`/translations/${langCode}.json`);
+            if (!response.ok) {
+                console.log('Trying relative path for', langCode);
+                // Try relative path
+                response = await fetch(`translations/${langCode}.json`);
+            }
+            
+            if (response.ok) {
+                this.translations[langCode] = await response.json();
+                console.log('Loaded translations for', langCode);
+                return this.translations[langCode];
+            } else {
+                console.error(`Failed to load ${langCode} translations, status:`, response.status);
+                return this.translations['en']; // Fallback to English
+            }
+        } catch (error) {
+            console.error(`Failed to load ${langCode} translations:`, error);
+            return this.translations['en']; // Fallback to English
+        }
+    }
+
     createLanguageSelector() {
         // Check if selector already exists
         if (document.getElementById('language-selector')) {
+            console.log('Language selector already exists');
             return;
         }
+
+        console.log('Creating language selector...');
 
         const languages = {
             'en': { name: 'English', flag: '🇺🇸' },
@@ -982,6 +1039,9 @@ class DarkSideHackers {
         const navContainer = document.querySelector('.nav-container');
         if (navContainer) {
             navContainer.appendChild(languageSelector);
+            console.log('Language selector added to nav-container');
+        } else {
+            console.error('Nav container not found! Language selector not added.');
         }
 
         // Add event listeners
@@ -991,6 +1051,12 @@ class DarkSideHackers {
     setupLanguageSelectorEvents() {
         const currentButton = document.querySelector('.language-current');
         const dropdown = document.querySelector('.language-dropdown');
+        
+        if (!currentButton || !dropdown) {
+            console.error('Language selector elements not found');
+            return;
+        }
+        
         const menuItems = dropdown.querySelectorAll('li');
 
         // Toggle dropdown
@@ -1005,6 +1071,7 @@ class DarkSideHackers {
         menuItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 const langCode = item.getAttribute('data-lang');
+                console.log('Language selected:', langCode);
                 this.changeLanguage(langCode);
                 currentButton.setAttribute('aria-expanded', 'false');
                 dropdown.classList.remove('active');
@@ -1019,64 +1086,128 @@ class DarkSideHackers {
     }
 
     initializeGoogleTranslate() {
-        // Create Google Translate element container
-        const translateContainer = document.createElement('div');
-        translateContainer.id = 'google-translate-element';
-        translateContainer.style.display = 'none';
-        document.body.appendChild(translateContainer);
-
-        // Load Google Translate script
-        const script = document.createElement('script');
-        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        script.async = true;
-        document.head.appendChild(script);
-
-        // Initialize Google Translate
-        window.googleTranslateElementInit = () => {
-            if (window.google && window.google.translate) {
-                new window.google.translate.TranslateElement({
-                    pageLanguage: 'en',
-                    includedLanguages: 'en,de,pt,it,es,fr',
-                    layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-                    autoDisplay: false
-                }, 'google-translate-element');
-                
-                // Hide Google Translate's default UI after it loads
-                setTimeout(() => {
-                    const googteCombo = document.querySelector('.goog-te-combo');
-                    if (googteCombo) {
-                        googteCombo.style.display = 'none';
-                    }
-                }, 2000);
-            }
-        };
+        // Removed: Google Translate integration replaced with local translation system
     }
 
-    changeLanguage(langCode) {
-        // Wait for Google Translate to be ready
-        const waitForGoogleTranslate = () => {
-            const googteCombo = document.querySelector('.goog-te-combo');
-            if (googteCombo) {
-                // Set the language
-                googteCombo.value = langCode;
-                
-                // Trigger change event
-                const event = new Event('change', { bubbles: true });
-                googteCombo.dispatchEvent(event);
-                
-                // Update UI
-                this.updateLanguageUI(langCode);
-                
-                // Save preference
-                this.saveLanguagePreference(langCode);
-            } else {
-                // If Google Translate is not ready, wait and try again
-                setTimeout(waitForGoogleTranslate, 500);
-            }
-        };
+    async changeLanguage(langCode) {
+        console.log('changeLanguage called with:', langCode);
+        
+        // Load translation file for the selected language
+        const translations = await this.loadLanguageFile(langCode);
+        
+        if (!translations) {
+            console.error('Translations not available for', langCode);
+            return;
+        }
 
-        // Start waiting
-        waitForGoogleTranslate();
+        console.log('Translations loaded for', langCode);
+
+        // Update current language
+        this.currentLanguage = langCode;
+
+        // Apply translations to the page
+        this.applyTranslations(translations);
+        
+        // Update UI
+        this.updateLanguageUI(langCode);
+        
+        // Save preference
+        this.saveLanguagePreference(langCode);
+        
+        console.log('Language changed to', langCode, 'successfully');
+    }
+
+    applyTranslations(translations) {
+        console.log('Applying translations...');
+        
+        // Translation mapping: data attribute to translation key
+        const elements = document.querySelectorAll('[data-translate]');
+        console.log('Found', elements.length, 'elements with data-translate attribute');
+        
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const translation = this.getNestedTranslation(translations, key);
+            
+            if (translation) {
+                // Check if element is an input with placeholder
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    if (element.hasAttribute('placeholder')) {
+                        element.placeholder = translation;
+                    }
+                } else {
+                    // Regular text content
+                    element.textContent = translation;
+                }
+            }
+        });
+
+        // Also translate navigation links by text matching
+        this.translateNavigation(translations);
+        
+        // Auto-translate common button text
+        this.autoTranslateButtons(translations);
+        
+        // Store current translations for page-wide use
+        window.currentTranslations = translations;
+        
+        console.log('Translations applied successfully');
+    }
+    
+    autoTranslateButtons(translations) {
+        // Translate common button texts
+        const buttons = document.querySelectorAll('button, .btn');
+        buttons.forEach(button => {
+            const text = button.textContent.trim().toUpperCase();
+            
+            // Get Started button
+            if (text === 'GET STARTED' || text === translations.hero?.getStarted?.toUpperCase()) {
+                if (translations.hero?.getStarted) {
+                    button.textContent = translations.hero.getStarted;
+                }
+            }
+            // Learn More button
+            else if (text === 'LEARN MORE' || text === translations.hero?.learnMore?.toUpperCase()) {
+                if (translations.hero?.learnMore) {
+                    button.textContent = translations.hero.learnMore;
+                }
+            }
+            // Submit button
+            else if (text === 'SUBMIT REQUEST' || text === translations.contact?.submit?.toUpperCase()) {
+                if (translations.contact?.submit) {
+                    button.textContent = translations.contact.submit;
+                }
+            }
+            // Check Status button
+            else if (text === 'CHECK STATUS' || text === translations.ticketTracker?.check?.toUpperCase()) {
+                if (translations.ticketTracker?.check) {
+                    button.textContent = translations.ticketTracker.check;
+                }
+            }
+        });
+    }
+
+    translateNavigation(translations) {
+        // Translate navigation links
+        const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+        navLinks.forEach(link => {
+            const text = link.textContent.trim();
+            if (text === 'Home' || text === translations.nav.home) {
+                link.textContent = translations.nav.home;
+            } else if (text === 'Services' || text.includes('Servic') || text.includes('Dienst')) {
+                link.textContent = translations.nav.services;
+            } else if (text === 'About' || text.includes('About') || text.includes('Über') || text.includes('Acerca') || text.includes('Propos') || text.includes('Chi')) {
+                link.textContent = translations.nav.about;
+            } else if (text === 'Contact' || text.includes('Contact') || text.includes('Kontakt')) {
+                link.textContent = translations.nav.contact;
+            }
+        });
+    }
+
+    getNestedTranslation(obj, path) {
+        // Support nested keys like "nav.home"
+        return path.split('.').reduce((current, key) => {
+            return current ? current[key] : undefined;
+        }, obj);
     }
 
     updateLanguageUI(langCode) {
@@ -1119,9 +1250,10 @@ class DarkSideHackers {
 
         // Apply saved language if different from default English
         if (savedLang && savedLang !== 'en') {
+            // Wait for DOM to be fully loaded
             setTimeout(() => {
                 this.changeLanguage(savedLang);
-            }, 3000); // Wait longer for Google Translate to load
+            }, 500); // Shorter delay since we don't need to wait for Google Translate
         }
     }
 
