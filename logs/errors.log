@@ -1,0 +1,2 @@
+[2025-12-18 14:10:22] [EMAIL_SYSTEM] [IP: 129.0.99.52] Email system not ready | Context: {"config_loaded":true,"phpmailer_loaded":false,"config_error":"","phpmailer_error":""}
+[2025-12-19 22:21:09] [EMAIL_SYSTEM] [IP: 129.0.99.84] Email system not ready | Context: {"config_loaded":true,"phpmailer_loaded":false,"config_error":"","phpmailer_error":""}

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Private Hackers</title>
+    <meta name="description" content="Meet our expert team of ethical hackers. Professional cybersecurity specialists with years of experience in digital security and ethical hacking services.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Simple CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    
+    <style>
+        body {
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 255, 65, 0.2);
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #00ff41, #00d4ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #0a0a0a;
+            margin: 0 auto 20px;
+            font-weight: bold;
+        }
+        
+        .skill-bar {
+            background: #1a1a1a;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            background: linear-gradient(90deg, #00ff41, #00d4ff);
+            height: 100%;
+            border-radius: 3px;
+            transition: width 2s ease;
+        }
+        
+        .stat-counter {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: #1a1a1a;
+            border: 1px solid #00ff41;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PRIVATE</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="neon-text">
+                MEET OUR TEAM
+            </h1>
+            <p>
+                Elite cybersecurity professionals with decades of combined experience in ethical hacking, 
+                digital forensics, and information security.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Company Stats -->
+    <section class="section bg-dark-secondary">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-counter text-neon-green" id="counter-experience">0</div>
+                    <div class="text-muted">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-counter text-cyber-blue" id="counter-clients">0</div>
+                    <div class="text-muted">Clients Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-counter text-warning-red" id="counter-projects">0</div>
+                    <div class="text-muted">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-counter text-neon-green" id="counter-success">0</div>
+                    <div class="text-muted">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Members -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center neon-text">
+                OUR EXPERTS
+            </h2>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card" data-member="cipher">
+                    <div class="team-avatar">C</div>
+                    <h3>Cipher</h3>
+                    <p class="team-role">Lead Security Architect</p>
+                    <p class="team-description">15+ years in cybersecurity. Specializes in penetration testing and network security. Former military intelligence.</p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Penetration Testing</span>
+                                <span>98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Network Security</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Cryptography</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card" data-member="ghost">
+                    <div class="team-avatar">G</div>
+                    <h3>Ghost</h3>
+                    <p class="team-role">Digital Forensics Expert</p>
+                    <p class="team-description">12+ years in digital forensics and incident response. Expert in blockchain analysis and cryptocurrency recovery.</p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Blockchain Analysis</span>
+                                <span>96%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 96%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Digital Forensics</span>
+                                <span>94%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 94%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Data Recovery</span>
+                                <span>91%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 91%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card" data-member="phantom">
+                    <div class="team-avatar">P</div>
+                    <h3>Phantom</h3>
+                    <p class="team-role">Social Engineering Specialist</p>
+                    <p class="team-description">10+ years in social engineering and psychological operations. Expert in human factor security and account access.</p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Social Engineering</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 99%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Account Recovery</span>
+                                <span>97%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 97%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Phone Systems</span>
+                                <span>93%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 93%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-card" data-member="shadow">
+                    <div class="team-avatar">S</div>
+                    <h3>Shadow</h3>
+                    <p class="team-role">Malware Specialist</p>
+                    <p class="team-description">8+ years in malware development and analysis. Expert in creating undetectable solutions for legitimate security testing.</p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Malware Development</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Reverse Engineering</span>
+                                <span>91%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 91%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Exploit Development</span>
+                                <span>89%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 89%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-card" data-member="zero">
+                    <div class="team-avatar">Z</div>
+                    <h3>Zero</h3>
+                    <p class="team-role">Web Application Expert</p>
+                    <p class="team-description">9+ years in web application security. Expert in SQL injection, XSS, and advanced web exploitation techniques.</p>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Web Security</span>
+                                <span>97%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 97%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>SQL Injection</span>
+                                <span>99%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 99%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>XSS Attacks</span>
+                                <span>96%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 96%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Company Mission -->
+    <section class="section bg-dark-secondary">
+        <div class="container">
+            <h2 class="text-center neon-text">
+                OUR MISSION
+            </h2>
+            <p class="mission-text">
+                We believe in ethical hacking as a force for good. Our mission is to provide legitimate cybersecurity services 
+                while maintaining the highest standards of confidentiality and professionalism.
+            </p>
+            
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <div class="mission-icon">🔒</div>
+                    <h3>Confidentiality</h3>
+                    <p>100% discretion guaranteed. Your privacy is our top priority.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">⚡</div>
+                    <h3>Efficiency</h3>
+                    <p>Rapid response times with 24/7 availability for urgent requests.</p>
+                </div>
+                <div class="mission-item">
+                    <div class="mission-icon">🎯</div>
+                    <h3>Precision</h3>
+                    <p>Exact results with minimal digital footprint and maximum security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Team Member Modal -->
+    <div id="member-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h2 id="modal-title" class="text-2xl font-bold neon-text"></h2>
+                <button id="modal-close" class="text-text-muted hover:text-text-light text-2xl">&times;</button>
+            </div>
+            <div id="modal-content">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo neon-text mb-4">PRIVATE HACKERS</div>
+            <p class="text-muted mb-6">Professional cybersecurity services available 24/7</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: jatrairgairsx@gmail.com</p>
+                    <p>Phone: +1 (782) 377-6721</p>
+                    <p>58 Solomons Court<br/>Glencar, Letterkenny<br/>Co. Donegal</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="text-cyber-blue">Operating Hours</h4>
+                    <p>24/7 Emergency Services</p>
+                    <p>Standard: Mon-Sun</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="text-warning-red">Guarantee</h4>
+                    <p>100% Confidential</p>
+                    <p>Money Back Guarantee</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Private Hackers — privatehackers.com
+            </div>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+
+    <!-- WhatsApp Floating Buttons -->
+    <style>
+        .whatsapp-buttons-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .whatsapp-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 32px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-btn-left {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+
+        .whatsapp-btn-left:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn-left:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            background: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 50;
+            font-family: Arial, sans-serif;
+        }
+
+        .whatsapp-btn:hover .whatsapp-tooltip,
+        .whatsapp-btn-left:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        .whatsapp-btn .whatsapp-tooltip {
+            right: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .whatsapp-btn-left .whatsapp-tooltip {
+            left: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Bottom Middle Button */
+        .whatsapp-btn-bottom {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+
+        .whatsapp-btn-bottom:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .whatsapp-btn-bottom:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .whatsapp-btn-bottom .whatsapp-tooltip {
+            bottom: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .whatsapp-btn-bottom:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        /* Tablet view (768px and below) */
+        @media (max-width: 768px) {
+            .whatsapp-btn-left {
+                bottom: 25px;
+                left: 20px;
+                right: auto;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 25px;
+                right: 20px;
+                left: auto;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+
+            .whatsapp-btn-bottom {
+                display: none;
+            }
+
+            .whatsapp-tooltip {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Small mobile view (480px and below) */
+        @media (max-width: 480px) {
+            .whatsapp-btn-left {
+                bottom: 20px;
+                left: 15px;
+                right: auto;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 90px;
+                right: 15px;
+                left: auto;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-btn-bottom {
+                display: flex;
+                bottom: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+
+        /* Extra small phones (below 380px) */
+        @media (max-width: 380px) {
+            .whatsapp-btn-left {
+                bottom: 15px;
+                left: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 75px;
+                right: 10px;
+                gap: 10px;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-btn-bottom {
+                bottom: 130px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whatsapp-btn,
+        .whatsapp-btn-left {
+            animation: slideInUp 0.5s ease;
+        }
+    </style>
+
+    <!-- Left Side WhatsApp Button -->
+    <a href="https://wa.me/353899415977?text=Hello%20Private%20Hackers" 
+       class="whatsapp-btn-left" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp (+353 89 941 5977)">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+        </svg>
+        <div class="whatsapp-tooltip">+353 89 941 5977</div>
+    </a>
+
+    <!-- Right Side WhatsApp Button (UK) -->
+    <div class="whatsapp-buttons-container">
+        <a href="https://wa.me/447495469686?text=Hello%20Private%20Hackers" 
+           class="whatsapp-btn" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Chat on WhatsApp (+44 7495 469686)">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+            </svg>
+            <div class="whatsapp-tooltip">+44 7495 469686</div>
+        </a>
+    </div>
+
+    <!-- Bottom Middle WhatsApp Button (USA) -->
+    <a href="https://wa.me/17823776721?text=Hello%20Private%20Hackers" 
+       class="whatsapp-btn-bottom" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp (+1 782 377 6721)">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+        </svg>
+        <div class="whatsapp-tooltip">+1 782 377 6721</div>
+    </a>
+</body>
+</html>

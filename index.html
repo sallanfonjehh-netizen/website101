@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Hackers - Professional Hacking Services</title>
+    <meta name="description" content="Expert ethical hackers for hire. Professional cybersecurity services including grade changes, phone access, Bitcoin recovery, and more. Available 24/7.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Simple CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+        
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 255, 65, 0.2);
+        }
+        
+        .chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #00ff41, #00d4ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #0a0a0a;
+            margin: 0 auto 20px;
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div id="matrix-bg" class="matrix-bg"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PRIVATE</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                <span class="neon-text">UNLOCK THE POWER</span><br>
+                <span class="text-cyber-blue">OF HACKING</span>
+            </h1>
+            <p>
+                Expert ethical hackers available 24/7. Professional cybersecurity services with guaranteed results. 
+                Your digital security is our mission.
+            </p>
+            <div class="hero-buttons">
+                <button id="get-started" class="btn btn-primary">
+                    GET STARTED
+                </button>
+                <button id="learn-more" class="btn btn-secondary">
+                    LEARN MORE
+                </button>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number neon-text" id="stat-clients">0</div>
+                    <div class="stat-label">Clients Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-cyber-blue" id="stat-success">0%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number text-warning-red" id="stat-response">0</div>
+                    <div class="stat-label">Min Response</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center neon-text">
+                OUR SERVICES
+            </h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Phone Access</h3>
+                    <p>Gain complete access to any phone remotely without detection. Monitor calls, messages, and location.</p>
+                    <div class="card-price">From $500</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🎓</div>
+                    <h3>Grade Changes</h3>
+                    <p>Modify academic records discreetly. Change grades, attendance, and academic history in school databases.</p>
+                    <div class="card-price">From $300</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">₿</div>
+                    <h3>Bitcoin Recovery</h3>
+                    <p>Recover lost or stolen cryptocurrency. Expert blockchain analysis and wallet recovery services.</p>
+                    <div class="card-price">From $1000</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Social Media</h3>
+                    <p>Access any social media account. Recover hacked profiles or monitor activity discreetly.</p>
+                    <div class="card-price">From $400</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Website Hacking</h3>
+                    <p>Penetration testing and security audits. Ethical hacking services for website owners.</p>
+                    <div class="card-price">From $800</div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <h3>Investigations</h3>
+                    <p>Digital forensics and cyber investigations. Evidence gathering and background checks.</p>
+                    <div class="card-price">From $600</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Request Form -->
+    <section class="section bg-dark-secondary">
+        <div class="container">
+            <h2 class="text-center neon-text">
+                REQUEST SERVICE
+            </h2>
+            
+            <form id="service-form" class="form-container">
+                <!-- Step 1: Service Selection -->
+                <div class="form-step active" id="step-1">
+                    <h3 class="text-cyber-blue">Select Service</h3>
+                    <div class="service-options">
+                        <label class="service-option">
+                            <input type="radio" name="service" value="phone">
+                            <div class="service-option-content">
+                                <div class="text-neon-green font-bold">📱 Phone Access</div>
+                                <div class="text-muted">Remote phone monitoring</div>
+                            </div>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="grades">
+                            <div class="service-option-content">
+                                <div class="text-neon-green font-bold">🎓 Grade Changes</div>
+                                <div class="text-muted">Academic record modification</div>
+                            </div>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="bitcoin">
+                            <div class="service-option-content">
+                                <div class="text-neon-green font-bold">₿ Bitcoin Recovery</div>
+                                <div class="text-muted">Cryptocurrency recovery</div>
+                            </div>
+                        </label>
+                        <label class="service-option">
+                            <input type="radio" name="service" value="social">
+                            <div class="service-option-content">
+                                <div class="text-neon-green font-bold">🔒 Social Media</div>
+                                <div class="text-muted">Account access & recovery</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" id="next-step-1" class="btn btn-primary">
+                            Next Step
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Contact Information -->
+                <div class="form-step" id="step-2">
+                    <h3 class="text-cyber-blue">Contact Details</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" name="name" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Priority Level</label>
+                            <select name="priority" class="form-control">
+                                <option value="standard">Standard</option>
+                                <option value="urgent">Urgent (+50%)</option>
+                                <option value="emergency">Emergency (+100%)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" id="prev-step-2" class="btn btn-secondary">
+                            Previous
+                        </button>
+                        <button type="button" id="next-step-2" class="btn btn-primary">
+                            Next Step
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Details & Budget -->
+                <div class="form-step" id="step-3">
+                    <h3 class="text-cyber-blue">Project Details</h3>
+                    <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea name="description" rows="4" required class="form-control" placeholder="Describe your requirements in detail..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Timeline</label>
+                        <select name="timeline" class="form-control">
+                            <option value="1week">1 Week</option>
+                            <option value="2weeks">2 Weeks</option>
+                            <option value="1month">1 Month</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" id="prev-step-3" class="btn btn-secondary">
+                            Previous
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            Submit Request
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo neon-text mb-4">PRIVATE HACKERS</div>
+            <p class="text-muted mb-6">Professional cybersecurity services available 24/7</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: jatrairgairsx@gmail.com</p>
+                    <p>Phone: +353 89 941 5977</p>
+                    <p>58 Solomons Court<br/>Glencar, Letterkenny<br/>Co. Donegal</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="text-cyber-blue">Operating Hours</h4>
+                    <p>24/7 Emergency Services</p>
+                    <p>Standard: Mon-Sun</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="text-warning-red">Guarantee</h4>
+                    <p>100% Confidential</p>
+                    <p>Money Back Guarantee</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Private Hackers — privatehackers.com
+            </div>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+
+    <!-- WhatsApp Floating Buttons -->
+    <style>
+        .whatsapp-buttons-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .whatsapp-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 32px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-btn-left {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+
+        .whatsapp-btn-left:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn-left:active {
+            transform: scale(0.95);
+        }
+
+        /* Bottom Middle Button */
+        .whatsapp-btn-bottom {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+
+        .whatsapp-btn-bottom:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .whatsapp-btn-bottom:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .whatsapp-btn-bottom .whatsapp-tooltip {
+            bottom: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            background: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 50;
+            font-family: Arial, sans-serif;
+        }
+
+        .whatsapp-btn:hover .whatsapp-tooltip,
+        .whatsapp-btn-left:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        .whatsapp-btn .whatsapp-tooltip {
+            right: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .whatsapp-btn-left .whatsapp-tooltip {
+            left: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .whatsapp-btn-bottom:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        /* Tablet view (768px and below) */
+        @media (max-width: 768px) {
+            .whatsapp-btn-left {
+                bottom: 25px;
+                left: 20px;
+                right: auto;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 25px;
+                right: 20px;
+                left: auto;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+
+            .whatsapp-btn-bottom {
+                display: none;
+            }
+
+            .whatsapp-tooltip {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Small mobile view (480px and below) */
+        @media (max-width: 480px) {
+            .whatsapp-btn-left {
+                bottom: 20px;
+                left: 15px;
+                right: auto;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 90px;
+                right: 15px;
+                left: auto;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-btn-bottom {
+                display: flex;
+                bottom: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+
+        /* Extra small phones (below 380px) */
+        @media (max-width: 380px) {
+            .whatsapp-btn-left {
+                bottom: 15px;
+                left: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 75px;
+                right: 10px;
+                gap: 10px;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-btn-bottom {
+                bottom: 130px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whatsapp-btn,
+        .whatsapp-btn-left {
+            animation: slideInUp 0.5s ease;
+        }
+    </style>
+
+    <!-- Left Side WhatsApp Button -->
+    <a href="https://wa.me/353899415977?text=Hello%20Private%20Hackers" 
+       class="whatsapp-btn-left" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp (+353 89 941 5977)">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+        </svg>
+        <div class="whatsapp-tooltip">+353 89 941 5977</div>
+    </a>
+
+    <!-- Right Side WhatsApp Button (UK) -->
+    <div class="whatsapp-buttons-container">
+        <a href="https://wa.me/447495469686?text=Hello%20Private%20Hackers" 
+           class="whatsapp-btn" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Chat on WhatsApp (+44 7495 469686)">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+            </svg>
+            <div class="whatsapp-tooltip">+44 7495 469686</div>
+        </a>
+    </div>
+
+    <!-- Bottom Middle WhatsApp Button (USA) -->
+    <a href="https://wa.me/17823776721?text=Hello%20Private%20Hackers" 
+       class="whatsapp-btn-bottom" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp (+1 782 377 6721)">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+        </svg>
+        <div class="whatsapp-tooltip">+1 782 377 6721</div>
+    </a>
+</body>
+</html>

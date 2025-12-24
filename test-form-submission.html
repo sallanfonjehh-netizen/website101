@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Form Submission - Private Hackers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #00ff41;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 10px;
+        }
+        .test-section {
+            background: #1a1a1a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .test-result {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+        .success {
+            background: #003300;
+            border: 1px solid #00ff41;
+            color: #00ff41;
+        }
+        .error {
+            background: #330000;
+            border: 1px solid #ff073a;
+            color: #ff073a;
+        }
+        .warning {
+            background: #333300;
+            border: 1px solid #ffc107;
+            color: #ffc107;
+        }
+        button {
+            background: #00ff41;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #00cc33;
+        }
+        button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #00d4ff;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        .checkbox-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .status-success {
+            background: #003300;
+            color: #00ff41;
+        }
+        .status-error {
+            background: #330000;
+            color: #ff073a;
+        }
+        .status-warning {
+            background: #333300;
+            color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Submission Test</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Check PHP Backend</h2>
+        <p>Test if the PHP backend is accessible and working:</p>
+        <button id="test-php-btn">Test PHP Backend</button>
+        <div id="php-result" class="test-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Submit Test Form</h2>
+        <p>Fill out the form and test submission:</p>
+        
+        <form id="test-form">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" value="Test User" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" value="test@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" value="+1234567890" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Service *</label>
+                <select id="service" name="service" required>
+                    <option value="Phone Access">Phone Access</option>
+                    <option value="Bitcoin Recovery">Bitcoin Recovery</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Website Security">Website Security</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="priority">Priority *</label>
+                <select id="priority" name="priority" required>
+                    <option value="Standard">Standard (3-5 days)</option>
+                    <option value="Urgent">Urgent (24-48 hours)</option>
+                    <option value="Emergency">Emergency (Same day)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Features (Optional)</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="features[]" value="24/7 Support"> 24/7 Support</label>
+                    <label><input type="checkbox" name="features[]" value="Encrypted Communication"> Encrypted Communication</label>
+                    <label><input type="checkbox" name="features[]" value="Progress Reports"> Progress Reports</label>
+                    <label><input type="checkbox" name="features[]" value="Money Back Guarantee"> Money Back Guarantee</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description *</label>
+                <textarea id="description" name="description" required>This is a test submission to verify the form is working correctly.</textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn">Submit Test Form</button>
+        </form>
+        
+        <div id="form-result" class="test-result"></div>
+        <div id="form-status" class="status"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Check Local Storage</h2>
+        <p>Check if form data is stored in browser's local storage:</p>
+        <button id="check-storage-btn">Check Local Storage</button>
+        <div id="storage-result" class="test-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Results Summary</h2>
+        <div id="summary"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testPhpBtn = document.getElementById('test-php-btn');
+            const phpResult = document.getElementById('php-result');
+            const testForm = document.getElementById('test-form');
+            const formResult = document.getElementById('form-result');
+            const formStatus = document.getElementById('form-status');
+            const submitBtn = document.getElementById('submit-btn');
+            const checkStorageBtn = document.getElementById('check-storage-btn');
+            const storageResult = document.getElementById('storage-result');
+            const summary = document.getElementById('summary');
+            
+            let testResults = {
+                phpBackend: null,
+                formSubmission: null,
+                localStorage: null
+            };
+            
+            // Test 1: Check PHP Backend
+            testPhpBtn.addEventListener('click', async function() {
+                testPhpBtn.disabled = true;
+                testPhpBtn.textContent = 'Testing...';
+                phpResult.textContent = 'Testing PHP backend...';
+                phpResult.className = 'test-result warning';
+                
+                try {
+                    // Try to access submit-form.php
+                    const response = await fetch('submit-form.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ test: true })
+                    });
+                    
+                    const text = await response.text();
+                    
+                    if (response.ok) {
+                        phpResult.textContent = `✅ PHP Backend is accessible\nStatus: ${response.status}\nResponse: ${text.substring(0, 200)}...`;
+                        phpResult.className = 'test-result success';
+                        testResults.phpBackend = 'success';
+                    } else {
+                        phpResult.textContent = `❌ PHP Backend error\nStatus: ${response.status}\nResponse: ${text}`;
+                        phpResult.className = 'test-result error';
+                        testResults.phpBackend = 'error';
+                    }
+                } catch (error) {
+                    phpResult.textContent = `❌ PHP Backend not accessible\nError: ${error.message}\n\nThis is expected if PHP files are not uploaded to the server yet.`;
+                    phpResult.className = 'test-result error';
+                    testResults.phpBackend = 'error';
+                } finally {
+                    testPhpBtn.disabled = false;
+                    testPhpBtn.textContent = 'Test PHP Backend';
+                    updateSummary();
+                }
+            });
+            
+            // Test 2: Submit Test Form
+            testForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+                formStatus.textContent = '';
+                formStatus.className = '';
+                formResult.textContent = 'Submitting form...';
+                formResult.className = 'test-result warning';
+                
+                // Prepare form data
+                const formData = new FormData(testForm);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    service: formData.get('service'),
+                    priority: formData.get('priority'),
+                    description: formData.get('description'),
+                    features: []
+                };
+                
+                // Get selected features
+                document.querySelectorAll('input[name="features[]"]:checked').forEach(checkbox => {
+                    data.features.push(checkbox.value);
+                });
+                
+                try {
+                    // Submit to the same endpoint as the main form
+                    const apiUrl = 'submit-form.php';
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const text = await response.text();
+                    
+                    formResult.textContent = `Response Status: ${response.status}\nResponse:\n${text}`;
+                    
+                    if (response.ok) {
+                        try {
+                            const result = JSON.parse(text);
+                            if (result.success) {
+                                formStatus.textContent = `✅ Form submitted successfully! Ticket ID: ${result.ticketId}`;
+                                formStatus.className = 'status status-success';
+                                formResult.className = 'test-result success';
+                                testResults.formSubmission = 'success';
+                            } else {
+                                formStatus.textContent = `❌ Form submission failed: ${result.error || 'Unknown error'}`;
+                                formStatus.className = 'status status-error';
+                                formResult.className = 'test-result error';
+                                testResults.formSubmission = 'error';
+                            }
+                        } catch (jsonError) {
+                            // Not JSON response
+                            if (text.includes('Forbidden') || text.includes('403')) {
+                                formStatus.textContent = '⚠ Form submitted locally (403 Forbidden - PHP backend not accessible)';
+                                formStatus.className = 'status status-warning';
+                                formResult.className = 'test-result warning';
+                                testResults.formSubmission = 'warning';
+                            } else {
+                                formStatus.textContent = '⚠ Non-JSON response received';
+                                formStatus.className = 'status status-warning';
+                                formResult.className = 'test-result warning';
+                                testResults.formSubmission = 'warning';
+                            }
+                        }
+                    } else {
+                        formStatus.textContent = `❌ HTTP Error: ${response.status}`;
+                        formStatus.className = 'status status-error';
+                        formResult.className = 'test-result error';
+                        testResults.formSubmission = 'error';
+                    }
+                } catch (error) {
+                    formResult.textContent = `❌ Network error: ${error.message}`;
+                    formResult.className = 'test-result error';
+                    formStatus.textContent = '⚠ Form submitted locally (Network error)';
+                    formStatus.className = 'status status-warning';
+                    testResults.formSubmission = 'warning';
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Test Form';
+                    updateSummary();
+                }
+            });
+            
+            // Test 3: Check Local Storage
+            checkStorageBtn.addEventListener('click', function() {
+                const lastTicketId = localStorage.getItem('lastTicketId');
+                const lastSubmission = localStorage.getItem('lastSubmission');
+                
+                if (lastTicketId && lastSubmission) {
+                    try {
+                        const submission = JSON.parse(lastSubmission);
+                        storageResult.textContent = `✅ Local storage contains data:\n\nTicket ID: ${lastTicketId}\n\nLast Submission:\n${JSON.stringify(submission, null, 2)}`;
+                        storageResult.className = 'test-result success';
+                        testResults.localStorage = 'success';
+                    } catch (e) {
+                        storageResult.textContent = `❌ Error parsing local storage data: ${e.message}`;
+                        storageResult.className = 'test-result error';
+                        testResults.localStorage = 'error';
+                    }
+                } else {
+                    storageResult.textContent = '⚠ No data found in local storage. Submit a form first to store data.';
+                    storageResult.className = 'test-result warning';
+                    testResults.localStorage = 'warning';
+                }
+                
+                updateSummary();
+            });
+            
+            // Update summary
+            function updateSummary() {
+                let html = '<h3>Test Results:</h3><ul>';
+                
+                for (const [test, result] of Object.entries(testResults)) {
+                    if (result === 'success') {
+                        html += `<li>✅ ${test}: PASS</li>`;
+                    } else if (result === 'error') {
+                        html += `<li>❌ ${test}: FAIL</li>`;
+                    } else if (result === 'warning') {
+                        html += `<li>⚠ ${test}: WARNING</li>`;
+                    } else {
+                        html += `<li>⏳ ${test}: Not tested</li>`;
+                    }
+                }
+                
+                html += '</ul>';
+                
+                // Overall status
+                const allSuccess = Object.values(testResults).every(r => r === 'success');
+                const anyError = Object.values(testResults).some(r => r === 'error');
+                
+                if (allSuccess) {
+                    html += '<div class="status status-success">✅ All tests passed! The form system is working correctly.</div>';
+                } else if (anyError) {
+                    html += '<div class="status status-error">❌ Some tests failed. Check the individual test results above.</div>';
+                } else {
+                    html += '<div class="status status-warning">⚠ Some tests have warnings. The form may work with limitations.</div>';
+                }
+                
+                summary.innerHTML = html;
+            }
+            
+            // Initial summary
+            updateSummary();
+        });
+    </script>
+</body>
+</html>

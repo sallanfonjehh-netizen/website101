@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Private Hackers</title>
+    <meta name="description" content="Professional hacking services including phone access, grade changes, Bitcoin recovery, social media hacking, and cybersecurity solutions.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Simple CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0, 255, 65, 0.2);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00ff41, #00d4ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: #0a0a0a;
+            margin: 0 auto 20px;
+        }
+        
+        .price-calculator {
+            background: #1a1a1a;
+            border: 1px solid #00ff41;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .testimonial-card {
+            background: #1a1a1a;
+            border-left: 4px solid #00ff41;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .progress-bar {
+            background: #1a1a1a;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #00ff41, #00d4ff);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">PRIVATE</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="neon-text">
+                PROFESSIONAL SERVICES
+            </h1>
+            <p>
+                Comprehensive cybersecurity solutions tailored to your specific needs. 
+                From individual phone access to enterprise-level security audits.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Detailed Services -->
+    <section class="section">
+        <div class="container">
+            <div class="service-details-grid">
+                <!-- Phone Access -->
+                <div class="service-detail-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Phone Access & Monitoring</h3>
+                    <p>Complete remote access to any smartphone without detection. Monitor calls, messages, GPS location, social media apps, and more. Undetectable and secure.</p>
+                    
+                    <div class="progress-grid">
+                        <div class="progress-item">
+                            <span>Call Monitoring</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Message Access</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>GPS Tracking</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Social Media</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-price">
+                        <div class="text-muted">Based on complexity & timeline</div>
+                    </div>
+                </div>
+                
+                <!-- Grade Changes -->
+                <div class="service-detail-card">
+                    <div class="service-icon">🎓</div>
+                    <h3>Academic Record Modification</h3>
+                    <p>Discreet modification of academic records, grades, attendance, and transcripts. Access to school databases and secure grade management systems.</p>
+                    
+                    <div class="progress-grid">
+                        <div class="progress-item">
+                            <span>Grade Changes</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Transcript Modification</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Attendance Records</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Database Security</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-price">
+                        <div class="text-muted">Based on institution security</div>
+                    </div>
+                </div>
+                
+                <!-- Bitcoin Recovery -->
+                <div class="service-detail-card">
+                    <div class="service-icon">₿</div>
+                    <h3>Cryptocurrency Recovery</h3>
+                    <p>Expert recovery of lost or stolen Bitcoin and other cryptocurrencies. Blockchain analysis, wallet recovery, and theft investigation services.</p>
+                    
+                    <div class="progress-grid">
+                        <div class="progress-item">
+                            <span>Wallet Recovery</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Blockchain Analysis</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Theft Investigation</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Exchange Hacks</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-price">
+                        <div class="text-muted">Based on recovery amount</div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="service-detail-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Social Media Access</h3>
+                    <p>Access any social media account or recover hacked profiles. Facebook, Instagram, Twitter, Snapchat, and more. Complete account control.</p>
+                    
+                    <div class="progress-grid">
+                        <div class="progress-item">
+                            <span>Account Recovery</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 93%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Password Bypass</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 97%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>2FA Bypass</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 89%"></div>
+                            </div>
+                        </div>
+                        <div class="progress-item">
+                            <span>Content Monitoring</span>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-price">
+                        <div class="text-muted">Based on platform security</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Calculator -->
+    <section class="section bg-dark-secondary">
+        <div class="container">
+            <h2 class="text-center neon-text">
+                PRICE CALCULATOR
+            </h2>
+            
+            <div class="price-calculator">
+                <div class="calculator-grid">
+                    <div class="calculator-config">
+                        <h3>Service Configuration</h3>
+                        
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label>Select Service</label>
+                                <select id="calc-service">
+                                    <option value="500">Phone Access - $500</option>
+                                    <option value="300">Grade Changes - $300</option>
+                                    <option value="1000">Bitcoin Recovery - $1,000</option>
+                                    <option value="400">Social Media - $400</option>
+                                    <option value="800">Website Hacking - $800</option>
+                                    <option value="600">Investigations - $600</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Complexity Level</label>
+                                <select id="calc-complexity">
+                                    <option value="1">Basic - 1x</option>
+                                    <option value="1.5">Medium - 1.5x</option>
+                                    <option value="2">Complex - 2x</option>
+                                    <option value="3">Extreme - 3x</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Timeline</label>
+                                <select id="calc-timeline">
+                                    <option value="1">Standard (1-2 weeks)</option>
+                                    <option value="1.5">Rush (3-7 days) +50%</option>
+                                    <option value="2">Emergency (24-48h) +100%</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Additional Features</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="feature-support" value="200">
+                                        <span>24/7 Support (+$200)</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="feature-stealth" value="300">
+                                        <span>Advanced Stealth Mode (+$300)</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="feature-guarantee" value="150">
+                                        <span>Extended Guarantee (+$150)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-breakdown">
+                        <h3>Price Breakdown</h3>
+                        
+                        <div class="breakdown-list">
+                            <div class="breakdown-item">
+                                <span>Base Service:</span>
+                                <span id="base-price" class="price-value">$500</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Complexity Multiplier:</span>
+                                <span id="complexity-multiplier" class="price-multiplier">1x</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Timeline Multiplier:</span>
+                                <span id="timeline-multiplier" class="price-multiplier">1x</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Additional Features:</span>
+                                <span id="features-price" class="price-value">$0</span>
+                            </div>
+                            <div class="breakdown-divider"></div>
+                            <div class="breakdown-total">
+                                <span>Total Price:</span>
+                                <span id="total-price" class="total-price">$500</span>
+                            </div>
+                        </div>
+                        
+                        <button id="get-quote" class="btn btn-primary">
+                            GET QUOTE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center neon-text">
+                CLIENT TESTIMONIALS
+            </h2>
+            
+            <div class="testimonial-slider" id="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar bg-neon-green">JD</div>
+                                <div>
+                                    <div class="testimonial-name">John D.</div>
+                                    <div class="testimonial-role">University Student</div>
+                                </div>
+                            </div>
+                            <p>"Private Hackers helped me recover my academic record after a system error. Professional, discreet, and incredibly effective. Couldn't be happier with the results."</p>
+                            <div class="testimonial-rating">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar bg-cyber-blue">SM</div>
+                                <div>
+                                    <div class="testimonial-name">Sarah M.</div>
+                                    <div class="testimonial-role">Business Owner</div>
+                                </div>
+                            </div>
+                            <p>"Lost access to my business social media accounts. These experts recovered everything within 24 hours. Amazing service and support throughout the process."</p>
+                            <div class="testimonial-rating">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar bg-warning-red">RT</div>
+                                <div>
+                                    <div class="testimonial-name">Robert T.</div>
+                                    <div class="testimonial-role">Crypto Investor</div>
+                                </div>
+                            </div>
+                            <p>"Recovered 15 BTC from a compromised wallet. Their blockchain expertise is unmatched. Professional team that delivers real results when it matters most."</p>
+                            <div class="testimonial-rating">
+                                ★★★★★
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo neon-text mb-4">PRIVATE HACKERS</div>
+            <p class="text-muted mb-6">Professional cybersecurity services available 24/7</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: jatrairgairsx@gmail.com</p>
+                    <p>Phone: +1 (782) 377-6721</p>
+                    <p>58 Solomons Court<br/>Glencar, Letterkenny<br/>Co. Donegal</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="text-cyber-blue">Operating Hours</h4>
+                    <p>24/7 Emergency Services</p>
+                    <p>Standard: Mon-Sun</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="text-warning-red">Guarantee</h4>
+                    <p>100% Confidential</p>
+                    <p>Money Back Guarantee</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 Private Hackers — privatehackers.com
+            </div>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+
+    <!-- WhatsApp Floating Buttons -->
+    <style>
+        .whatsapp-buttons-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .whatsapp-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 32px;
+        }
+
+        .whatsapp-btn:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-btn-left {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+
+        .whatsapp-btn-left:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn-left:active {
+            transform: scale(0.95);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            background: #333;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 50;
+            font-family: Arial, sans-serif;
+        }
+
+        .whatsapp-btn:hover .whatsapp-tooltip,
+        .whatsapp-btn-left:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        .whatsapp-btn .whatsapp-tooltip {
+            right: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .whatsapp-btn-left .whatsapp-tooltip {
+            left: 85px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Bottom Middle Button */
+        .whatsapp-btn-bottom {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+
+        .whatsapp-btn-bottom:hover {
+            background: #20ba5a;
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .whatsapp-btn-bottom:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .whatsapp-btn-bottom .whatsapp-tooltip {
+            bottom: 85px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .whatsapp-btn-bottom:hover .whatsapp-tooltip {
+            opacity: 1;
+        }
+
+        /* Tablet view (768px and below) */
+        @media (max-width: 768px) {
+            .whatsapp-btn-left {
+                bottom: 25px;
+                left: 20px;
+                right: auto;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 25px;
+                right: 20px;
+                left: auto;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .whatsapp-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+
+            .whatsapp-btn-bottom {
+                display: none;
+            }
+
+            .whatsapp-tooltip {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+
+        /* Small mobile view (480px and below) */
+        @media (max-width: 480px) {
+            .whatsapp-btn-left {
+                bottom: 20px;
+                left: 15px;
+                right: auto;
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 90px;
+                right: 15px;
+                left: auto;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .whatsapp-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-btn-bottom {
+                display: flex;
+                bottom: 150px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+            }
+
+            .whatsapp-tooltip {
+                display: none;
+            }
+        }
+
+        /* Extra small phones (below 380px) */
+        @media (max-width: 380px) {
+            .whatsapp-btn-left {
+                bottom: 15px;
+                left: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-buttons-container {
+                bottom: 75px;
+                right: 10px;
+                gap: 10px;
+            }
+
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .whatsapp-btn-bottom {
+                bottom: 130px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whatsapp-btn,
+        .whatsapp-btn-left {
+            animation: slideInUp 0.5s ease;
+        }
+    </style>
+
+    <!-- Left Side WhatsApp Button -->
+    <a href="https://wa.me/353899415977?text=Hello%20Private%20Hackers" 
+       class="whatsapp-btn-left" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp (+353 89 941 5977)">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+        </svg>
+        <div class="whatsapp-tooltip">+353 89 941 5977</div>
+    </a>
+
+    <!-- Right Side WhatsApp Button (UK) -->
+    <div class="whatsapp-buttons-container">
+        <a href="https://wa.me/447495469686?text=Hello%20Private%20Hackers" 
+           class="whatsapp-btn" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           title="Chat on WhatsApp (+44 7495 469686)">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+            </svg>
+            <div class="whatsapp-tooltip">+44 7495 469686</div>
+        </a>
+    </div>
+
+    <!-- Bottom Middle WhatsApp Button (USA) -->
+    <a href="https://wa.me/17823776721?text=Hello%20Private%20Hackers" 
+       class="whatsapp-btn-bottom" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat on WhatsApp (+1 782 377 6721)">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-1.052 0-2.082.354-2.915.954l-.209.13-2.16-.567.576 2.11-.136.217a4.888 4.888 0 00-.46 2.457c0 2.713 2.21 4.92 4.92 4.92a4.9 4.9 0 003.478-1.437 4.868 4.868 0 001.441-3.484c0-2.71-2.21-4.92-4.92-4.92M20.067 3.507a9.9 9.9 0 00-7.018-2.837c-5.5 0-9.971 4.471-9.971 9.972 0 1.75.46 3.46 1.333 4.982L.75 21.978l5.526-1.447a9.972 9.972 0 004.782 1.222h.005c5.5 0 9.972-4.472 9.972-9.973a9.855 9.855 0 00-2.968-7.063Z"/>
+        </svg>
+        <div class="whatsapp-tooltip">+1 782 377 6721</div>
+    </a>
+</body>
+</html>
