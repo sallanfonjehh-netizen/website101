@@ -45,7 +45,7 @@ if (file_exists(__DIR__ . '/config.php')) {
                 echo "<p style='color: green;'>✓ SMTP configuration loaded: " . htmlspecialchars($smtpConfig['host']) . "</p>";
             }
         }
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         echo "<p style='color: red;'>✗ Error loading configuration: " . htmlspecialchars($e->getMessage()) . "</p>";
     }
 } else {
