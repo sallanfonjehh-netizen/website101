@@ -517,8 +517,8 @@ function send_email_via_smtp($to, $subject, $body, $smtp_config, $email_config, 
         $mail->SMTPAuth   = true;
         $mail->Username   = $smtp_config['username'];
         $mail->Password   = $smtp_config['password'];
-        $mail->SMTPSecure = $smtp_config['secure']; // 'tls' for port 587
-        $mail->Port       = $smtp_config['port'];   // 587 for TLS
+        $mail->SMTPSecure = $smtp_config['secure']; // 'ssl' for port 465, 'tls' for port 587
+        $mail->Port       = $smtp_config['port'];   // 465 for SSL, 587 for TLS
         
         // Character set
         $mail->CharSet = 'UTF-8';
