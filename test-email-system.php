@@ -192,7 +192,9 @@ if (isset($_POST['test_email']) && $phpmailerLoaded) {
         
     } catch (\Exception $e) {
         echo "<p style='color: red;'>✗ Email test failed: " . htmlspecialchars($e->getMessage()) . "</p>";
-        echo "<p>Error details: " . htmlspecialchars($mail->ErrorInfo ?? 'Unknown error') . "</p>";
+        if (isset($mail) && !empty($mail->ErrorInfo)) {
+            echo "<p>Error details: " . htmlspecialchars($mail->ErrorInfo) . "</p>";
+        }
     }
 }
 
