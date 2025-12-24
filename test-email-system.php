@@ -154,10 +154,8 @@ if (isset($_POST['test_email']) && $phpmailerLoaded) {
             require_once __DIR__ . '/vendor/phpmailer/phpmailer/src/SMTP.php';
         }
         
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
-        
-        $mail = new PHPMailer(true);
+        // Use fully qualified class names instead of use statements
+        $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
         $smtpConfig = Config::getSmtpConfig();
         $emailConfig = Config::getEmailConfig();
         
@@ -192,7 +190,7 @@ if (isset($_POST['test_email']) && $phpmailerLoaded) {
             echo "<pre>" . htmlspecialchars($debugOutput) . "</pre>";
         }
         
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         echo "<p style='color: red;'>✗ Email test failed: " . htmlspecialchars($e->getMessage()) . "</p>";
         echo "<p>Error details: " . htmlspecialchars($mail->ErrorInfo ?? 'Unknown error') . "</p>";
     }
